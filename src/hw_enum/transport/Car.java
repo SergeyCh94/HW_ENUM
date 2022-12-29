@@ -40,6 +40,10 @@ public class Car extends Transport <DriverB>{
 
     private BodyType bodyType;
 
+    @Override
+    public void passDiagnostics() {
+        super.passDiagnostics();
+    }
 
     @Override
     public String toString() {

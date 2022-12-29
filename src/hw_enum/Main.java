@@ -1,8 +1,6 @@
 package hw_enum;
 
-import hw_enum.driver.DriverB;
-import hw_enum.driver.DriverC;
-import hw_enum.driver.DriverD;
+import hw_enum.driver.Driver;
 import hw_enum.transport.Bus;
 import hw_enum.transport.Car;
 import hw_enum.transport.Trucks;
@@ -24,13 +22,12 @@ public class Main {
         Bus MAZ3 = new Bus("MAZ", "206", 12, Bus.TypeOfCapacity.ESPECIALLY_BIG);
         Bus MAZ4 = new Bus("MAZ", "207", 12.5, Bus.TypeOfCapacity.ESPECIALLY_SMALL);
 
-        DriverB ivan = new DriverB("Ivan");
-        DriverC sergey = new DriverC("Sergey");
-        DriverD semen = new DriverD("Semen");
 
-        ps2.printType();
-        tr1.printType();
-        MAZ1.printType();
+        Driver dr1  = new Driver("ASAS");
+
+        dr1.setDriverLicense(Driver.DriverLicense.B);
+        ps1.start(dr1);
+
 
     }
 }

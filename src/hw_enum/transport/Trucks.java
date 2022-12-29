@@ -39,6 +39,11 @@ public class Trucks extends Transport <DriverC>{
     private LoadCapacity loadCapacity;
 
     @Override
+    public void passDiagnostics() {
+        super.passDiagnostics();
+    }
+
+    @Override
     public String toString() {
         return "Модель " + getBrand() + " " + getModel() + ", Обьем двигателя - " + getEngineVolume();
     }

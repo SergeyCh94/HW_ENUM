@@ -1,5 +1,7 @@
 package hw_enum.transport;
 
+import hw_enum.driver.Driver;
+
 public abstract class Transport <T> implements Competing{
     private final String brand;
     private final String model;
@@ -25,13 +27,27 @@ public abstract class Transport <T> implements Competing{
         }
     }
 
-    public void start(T driver){
+    public void start(Driver driver){
 
-        System.out.println("Водитель " + driver + " управляет автомобилем " +  getBrand() + " " + getModel() +
-                " и будет участвовать в заезде");
+        if (driver.getDriverLicense() == null){
+            try {
+                throw new NullPointerException();
+            } catch (NullPointerException e){
+                System.out.println("Забыли водителя");
+            }
+        } else {
+            System.out.println("Водитель " + driver + " управляет автомобилем " +  getBrand() + " " + getModel() +
+                    " и будет участвовать в заезде");
+        }
+
+
     }
 
     public abstract void printType();
+
+    public void passDiagnostics(){
+
+    }
 
     public void stop(){
 
