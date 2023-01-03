@@ -2,7 +2,7 @@ package hw_enum.transport;
 
 import hw_enum.driver.DriverD;
 
-public class Bus extends Transport  <DriverD> {
+public class Bus extends Transport <DriverD> {
 
     @Override
     public void printType() {
@@ -11,6 +11,11 @@ public class Bus extends Transport  <DriverD> {
         } else {
             System.out.println(typeOfCapacity);
         }
+    }
+
+    @Override
+    public void passDiagnostics() throws NullPointerException {
+
     }
 
     public enum TypeOfCapacity {
@@ -38,10 +43,6 @@ public class Bus extends Transport  <DriverD> {
                 return "Вместимость: " + down + " - " + up + " мест";
             }
         }
-    }
-    @Override
-    public String toString() {
-        return "Модель " + getBrand() + " " + getModel() + ", Обьем двигателя - " + getEngineVolume();
     }
 
     public Bus(String brand, String model, double engineVolume, TypeOfCapacity typeOfCapacity) {

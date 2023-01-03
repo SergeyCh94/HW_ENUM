@@ -40,7 +40,7 @@ public class Trucks extends Transport <DriverC>{
 
     @Override
     public void passDiagnostics() {
-        super.passDiagnostics();
+        System.out.println("Диагностика");
     }
 
     @Override

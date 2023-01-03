@@ -42,7 +42,7 @@ public class Car extends Transport <DriverB>{
 
     @Override
     public void passDiagnostics() {
-        super.passDiagnostics();
+        System.out.println("Диагностика");
     }
 
     @Override
