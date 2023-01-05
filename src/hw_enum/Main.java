@@ -23,16 +23,14 @@ public class Main {
         Bus MAZ3 = new Bus("MAZ", "206", 12, Bus.TypeOfCapacity.ESPECIALLY_BIG);
         Bus MAZ4 = new Bus("MAZ", "207", 12.5, Bus.TypeOfCapacity.ESPECIALLY_SMALL);
 
+        Driver driver1 = new Driver("driver1");
+        driver1.setDriverLicense(Driver.DriverLicense.B);
 
-        Driver ps1dr = new Driver("Sergey");
+        ps1.start(driver1);
 
-        ps1dr.setDriverLicense(Driver.DriverLicense.B);
-        ps1.start(ps1dr);
+        Driver driver2 = new Driver("driver2");
+        driver2.setDriverLicense(null);
 
-        Driver ps2dr = new Driver("Semen");
-
-        ps1.start(ps2dr);
-
-
+        tr1.start(driver2);
     }
 }

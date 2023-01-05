@@ -15,7 +15,7 @@ public class Bus extends Transport <DriverD> {
 
     @Override
     public void passDiagnostics() throws NullPointerException {
-
+            throw new UnsupportedOperationException("Автобусы не могут проходить диагностику");
     }
 
     public enum TypeOfCapacity {

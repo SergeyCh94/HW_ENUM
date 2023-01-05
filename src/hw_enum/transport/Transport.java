@@ -3,12 +3,12 @@ package hw_enum.transport;
 import hw_enum.driver.Driver;
 import hw_enum.driver.DriverLicenseException;
 
-public abstract class Transport <T> implements Competing{
+public abstract class Transport<T> implements Competing {
     private final String brand;
     private final String model;
     private final double engineVolume;
 
-    public Transport(String brand, String model, double engineVolume) {
+    public Transport(final String brand, String model, double engineVolume) {
         if (brand == null || brand.isEmpty() || brand.isBlank()){
             this.brand = "default";
         } else {
@@ -36,8 +36,6 @@ public abstract class Transport <T> implements Competing{
             System.out.println("Водитель " + driver + " управляет автомобилем " +  getBrand() + " " + getModel() +
                     " и будет участвовать в заезде");
         }
-
-
     }
 
     public abstract void printType();
