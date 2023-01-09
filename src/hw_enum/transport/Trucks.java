@@ -1,6 +1,8 @@
 package hw_enum.transport;
 
+import hw_enum.driver.Driver;
 import hw_enum.driver.DriverC;
+import hw_enum.driver.DriverLicenseException;
 
 public class Trucks extends Transport <DriverC>{
 
@@ -37,6 +39,16 @@ public class Trucks extends Transport <DriverC>{
     }
 
     private LoadCapacity loadCapacity;
+
+    @Override
+    public void passDiagnostics() {
+        System.out.println("Диагностика");
+    }
+
+    @Override
+    public void start(Driver driver) throws DriverLicenseException {
+        super.start(driver);
+    }
 
     @Override
     public String toString() {

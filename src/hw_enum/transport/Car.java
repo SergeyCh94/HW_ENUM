@@ -1,6 +1,8 @@
 package hw_enum.transport;
 
+import hw_enum.driver.Driver;
 import hw_enum.driver.DriverB;
+import hw_enum.driver.DriverLicenseException;
 
 public class Car extends Transport <DriverB>{
     @Override
@@ -40,13 +42,20 @@ public class Car extends Transport <DriverB>{
 
     private BodyType bodyType;
 
+    @Override
+    public void passDiagnostics() {
+        System.out.println("Диагностика");
+    }
 
     @Override
     public String toString() {
         return "Модель " + getBrand() + " " + getModel() + ", Обьем двигателя - " + getEngineVolume();
     }
 
-
+    @Override
+    public void start(Driver driver) throws DriverLicenseException {
+        super.start(driver);
+    }
 
     public Car(String brand, String model, double engineVolume, BodyType bodyType) {
         super(brand, model, engineVolume);

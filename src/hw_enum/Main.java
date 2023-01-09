@@ -1,14 +1,13 @@
 package hw_enum;
 
-import hw_enum.driver.DriverB;
-import hw_enum.driver.DriverC;
-import hw_enum.driver.DriverD;
+import hw_enum.driver.Driver;
+import hw_enum.driver.DriverLicenseException;
 import hw_enum.transport.Bus;
 import hw_enum.transport.Car;
 import hw_enum.transport.Trucks;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NullPointerException, DriverLicenseException {
         Car ps1 = new Car("Lada", "Vesta", 1.7, Car.BodyType.SEDAN);
         Car ps2 = new Car("Audi", "A8", 3.0, Car.BodyType.UNIVERSAL);
         Car ps3 = new Car("Mazda", "RX8", 2.5, Car.BodyType.HATCHBACK);
@@ -24,13 +23,14 @@ public class Main {
         Bus MAZ3 = new Bus("MAZ", "206", 12, Bus.TypeOfCapacity.ESPECIALLY_BIG);
         Bus MAZ4 = new Bus("MAZ", "207", 12.5, Bus.TypeOfCapacity.ESPECIALLY_SMALL);
 
-        DriverB ivan = new DriverB("Ivan");
-        DriverC sergey = new DriverC("Sergey");
-        DriverD semen = new DriverD("Semen");
+        Driver driver1 = new Driver("driver1");
+        driver1.setDriverLicense(Driver.DriverLicense.B);
 
-        ps2.printType();
-        tr1.printType();
-        MAZ1.printType();
+        ps1.start(driver1);
 
+        Driver driver2 = new Driver("driver2");
+        driver2.setDriverLicense(null);
+
+        tr1.start(driver2);
     }
 }

@@ -2,12 +2,17 @@ package hw_enum.driver;
 
 public class Driver {
     private final String fio;
-    private boolean driverLicense;
     private int experience;
+
+    private DriverLicense driverLicense;
+
+    public enum DriverLicense {
+        B, C, D
+    }
 
     @Override
     public String toString() {
-        return fio;
+        return "Водитель " + fio + ", Водительское удостоверение " + driverLicense;
     }
 
     public Driver (String fio) {
@@ -18,16 +23,16 @@ public class Driver {
         }
     }
 
-    public String getFio() {
-        return fio;
+    public void setDriverLicense(DriverLicense driverLicense) {
+        this.driverLicense = driverLicense;
     }
 
-    public boolean isDriverLicense() {
+    public DriverLicense getDriverLicense() {
         return driverLicense;
     }
 
-    public void setDriverLicense(boolean driverLicense) {
-        this.driverLicense = driverLicense;
+    public String getFio() {
+        return fio;
     }
 
     public int getExperience() {
